@@ -18,17 +18,67 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+# Install TailwindCSS
 
-To learn more about Next.js, take a look at the following resources:
+<a href="https://tailwindcss.com/docs/installation/using-postcss"> https://tailwindcss.com/docs/installation/using-postcss </a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm install -D tailwindcss postcss autoprefixer
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## create your tailwind.config.js file.
 
-## Deploy on Vercel
+```
+npx tailwindcss init
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Configure your template paths
+Add the paths to all of your template files in your tailwind.config.js file.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+module.exports = {
+  content: [
+    "./pages/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+TailwindCSS will apply automatic on (js, jsx, ts, tsx) files in Pages and Components folder
+
+## Add 
+add these command in globals.css inside style folder 
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+# React-Hook-Form
+
+<a href="https://react-hook-form.com/get-started">https://react-hook-form.com/get-started</a>
+
+```
+npm install react-hook-form
+```
+
+get boiler plate from above website
+
+# JSON-Server
+
+<a href="https://github.com/typicode/json-server">https://github.com/typicode/json-server </a>
+
+```
+npm install -g json-server
+```
+
+## Run json-server on port 3004
+
+```
+json-server --watch db.json --port 3004
+```
