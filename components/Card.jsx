@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Card({ ele, fetchdata }) {
@@ -15,6 +16,9 @@ export default function Card({ ele, fetchdata }) {
       <p>Name :- {ele[0].notes}</p>
       <p>Description :- {ele[0].description}</p>
       <div className="flex space-x-2">
+        <button className="bg-blue-500 text-white rounded p-2 px-3">
+          <Link href={`/${ele[0].id}`}>Open</Link>
+        </button>
         <button
           className="bg-red-500 rounded p-2 px-3"
           onClick={() => deletefun(ele[0].id)}

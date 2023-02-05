@@ -1,6 +1,7 @@
 import React from "react";
 import Inputfields from "./Inputfields";
 import Notes from "./Notes";
+import Link from 'next/link'
 
 export default function Layout({ children }) {
   const [pagerefresh, setpagerefresh] = React.useState(0);
@@ -18,10 +19,10 @@ export default function Layout({ children }) {
     <>
       <nav className="w-screen relative">
         <div className="container flex flex-row items-center justify-between mx-auto p-6">
-          <a href="/">Home</a>
-          <a href="/about">About Us</a>
-          <a href="/contact">Contact</a>
-          <a href="/community">Community</a>
+          <Link href="/">Home</Link>
+          <Link href="/about">About Us</Link>
+          <Link href="/contact">Contact</Link>
+          <Link href="/community">Community</Link>
         </div>
       </nav>
       <div className="container mx-auto flex space-x-5 space-y-6">
